@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+    <title>Color Predictor</title>
+  </head>
+
+  <body>
+    <div class="slidecontainer">
+      <p>Red</p>
+      <input
+        id="red"
+        type="range"
+        min="0"
+        max="255"
+        value="50"
+        oninput="sliderChanged(this.value)"
+      />
+      <p>Green</p>
+      <input
+        id="green"
+        type="range"
+        min="0"
+        max="255"
+        value="50"
+        oninput="sliderChanged(this.value)"
+      />
+      <p>Blue</p>
+      <input
+        id="blue"
+        type="range"
+        min="0"
+        max="255"
+        value="50"
+        oninput="sliderChanged(this.value)"
+      />
+    </div>
+    <div
+      style="width: 100px; height: 100px; background: rgb(50, 50, 50, 1);"
+      id="colorView"
+    ></div>
+    <p class="outputLabel">Output Label</p>
+
+    <button onclick="randomColor()">Random Color</button>
+    <br />
+
+    <br />
+    <!-- <button class="saveColorButton">Save Color</button> -->
+    <button onclick="save(0)">
+      Red
+      <p id="0-count">0</p>
+    </button>
+    <button onclick="save(1)">
+      Green
+      <p id="1-count">0</p>
+    </button>
+    <button onclick="save(2)">
+      Blue
+      <p id="2-count">0</p>
+    </button>
+    <button onclick="save(3)">
+      Orange
+      <p id="3-count">0</p>
+    </button>
+    <button onclick="save(4)">
+      Yellow
+      <p id="4-count">0</p>
+    </button>
+    <button onclick="save(5)">
+      Purple
+      <p id="5-count">0</p>
+    </button>
+    <button onclick="save(6)">
+      Pink
+      <p id="6-count">0</p>
+    </button>
+    <button onclick="save(7)">
+      brown
+      <p id="7-count">0</p>
+    </button>
+    <button onclick="save(8)">
+      black
+      <p id="8-count">0</p>
+    </button>
+    <button onclick="save(9)">
+      white
+      <p id="9-count">0</p>
+    </button>
+    <p id="totalTrainingData">Total Training Data: 0</p>
+    <br />
+
+    <br />
+    <button class="trainButton" onclick="train()">Train</button>
+    <button class="classifyButton" onclick="classify()">Classify</button>
+  </body>
+
+  <script src="main.js"></script>
+</html>
